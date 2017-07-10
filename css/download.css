@@ -1,0 +1,416 @@
+
+body{
+	font-family: Roboto;
+	
+	
+}
+a,a:hover{
+	text-decoration: none!important;
+	color: #CCCCCC !important;
+}
+
+#close1{
+	position: absolute;
+	top:30px;
+	right:45px ;								
+	display:inline-block;				
+	opacity:100;
+	width:30px;
+	height:30px;				
+	transition: all .6s ease;		
+	-moz-transition: all .6s ease; 
+	-webkit-transition: all .6s ease;
+	
+	
+}
+#close1:hover{
+	opacity: 0;
+}
+#close2{
+	position: absolute;
+	top:30px;
+	right:45px ;								
+	display:inline-block;								
+	width:30px;
+	height:30px;								
+}
+
+#logo{
+	margin-left: -3px;
+	color: #CCCCCC ;						
+	font-style: normal;
+	margin-top: 140px;
+	margin-bottom: 41px ;
+	transition: all .6s ease;
+}
+#logo span{
+	width:100%;
+	height: 17px;
+	font-family:"微软雅黑"!important;
+	color: #E4E4E4;
+	display: inline-block;				
+	line-height:21.6px;
+	font-weight: 400;
+	font-size: 12px;
+	margin-left: 5px;
+	margin-top: 2px;
+	letter-spacing: 6px;
+}
+#logo a{
+	display: inline-block;
+	height: 18px;
+}
+#logo img{
+	padding: 0px;
+	margin: 0px;
+	width: 159px;
+	height: 51px;
+}
+
+form{
+	
+	color: #CCCCCC ;	
+	margin: 0px auto;
+	padding: 24px 16px 10px;				
+	width: 380px;
+	height: 389px;
+}
+
+form label{
+	color: #CCCCCC ;	
+	font-size: 15px;
+	margin-top: 6px;
+	font-weight: normal !important;
+}
+input{
+	
+	background: none !important;
+	border: #5b5b5b solid 1px !important;
+	
+}
+input[type="text"]{
+	border-radius: 3px;
+	
+	line-height: 32px;
+	padding: 0px;
+	height: 32px;
+	color: #EBEBEB;
+	padding-left: 8px;
+	}
+input:focus{
+	border: white solid 1px !important;
+	box-shadow: none !important;
+	
+	
+	
+}
+
+#checkd,#checkr{
+	margin: -3px ;
+	margin-top: 3px;
+	margin-left: 0px;
+	margin-right: 5px;
+	border: #5B5B5B solid 1px !important;
+	background: url(../img/download/unchecked-checkbox.png) no-repeat center;
+	width: 16px;
+	height: 16px;
+	color: #AAAAAA;
+	display: inline-block ;
+
+	
+}
+.cclick{
+	background: url(../img/download/checked-checkbox.png) no-repeat center!important;
+	
+	font-family: Roboto;
+}
+
+#tips{
+	color: #AAAAAA;
+	 margin-top: 15px;
+}
+.soelse{
+	color:#AAAAAA;
+	margin-top: 7px;									
+	margin-right: 3px;
+	display: inline-block;
+	width:105px;
+	line-height: 18px;
+}
+label{
+	width: 348px;
+	height: 23px;
+	margin-top: 5px;
+	padding: 0; 
+	padding: auto 1px;
+	color: #AAAAAA;
+}
+#bt{
+	border-top: 1px solid; 
+	margin:11px 0 ;
+	width: 100%;
+	
+}
+#bt>input{
+	text-align: center;
+	padding-top: 2px;
+}
+.dlbtn{
+	margin-bottom: 5px;
+	width: 100%;
+	height: 32px;
+	border-radius: 3px;				
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 400;
+	vertical-align: baseline;
+	border: 1px #E4E4E4 solid !important;
+}
+.Btn1{
+	margin-top: 15px;
+	background: #E4E4E4 !important;	
+	color: black;
+}
+.share{
+	width: 24px;
+	height: 24px; 
+	display:inline-block;
+	margin-right:2px;
+	background: url(../img/download/social_icon_24x24.png); 
+}
+.forget{
+	display: block;
+	font-size: 15px;
+	margin-top: 13px;
+	float: right;
+}
+/*#sidebar{
+	margin-top:-90px ;
+	 position: fixed;
+	 width: 128px;
+	 top:50%;
+	 right:-74px;"
+}
+
+.side{
+	position: relative;	
+	padding: 14px 12px;
+	right: 0px;
+	height: 54px;
+	width: 128px;
+	transition: all 0.4s ease 0.1s;
+	
+}
+.side:not(#wepop):hover{
+	background: rgb(62,163,255)!important ;							
+	right:74px;
+	cursor: pointer;
+}
+.side:nth-child(2){
+	width: 170px;
+}
+
+.side:nth-child(2):hover{
+	right:110px;
+}
+.side:first-child{
+	background: rgb(62,163,255); 
+	
+	overflow: hidden;
+}
+.side:not(:first-child){
+	background: rgb(49,53,61)
+}
+#wepop:hover{
+	background: rgb(62,163,255)!important ;
+	
+}
+.side:nth-child(1):hover{
+	background-color:rgb(97,176,255)!important;		
+}
+
+.side .word{
+	padding-left: 50px;
+	width: 150px;			
+	display:block;
+	margin-top: 2px;
+	color: #FFFFFF;
+	font-family:"微软雅黑" ;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	
+}
+
+.sidelogo{
+	margin-top: -2px;		
+	margin-right:0px;
+	background: url(../img/pic.png) ;
+	width: 30px;
+	height: 32px;
+	float:left;
+	display: inline-block;
+}
+.consult{
+	background-position:30px -38px;					
+}
+.phone{
+	
+	background-position:30px 0px;			
+}
+.teach{				
+	background-position:30px -182px;	
+}
+.side .wechat{				
+	background-position:30px -80px;	
+}
+#pop{
+	
+	position: fixed; 
+	top:46%;
+	right: 40px;
+	padding:10px;
+	opacity: 0;
+	transition: all .6s ease;
+	
+}*/
+
+#denglu{
+	display:block
+}
+#zhuce{
+	display:none
+}
+.star{
+	font-family: Roboto;
+	
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 0px;
+	line-height: 18px;
+	font-style: normal;
+}
+#zhuce #help{
+	opacity:.5;
+	border-radius:50%;
+	display:inline-block;
+	margin-top: -5px;
+}
+#zhuce #help:hover{
+	opacity: 100!important;
+}
+#zhuce .form-group:first-child{
+	margin-bottom: -10px;
+}
+#zhuce .form-group:not(:first-child){
+	margin-top: 10px!important;
+	margin-bottom: -10px;
+}
+#zhuce .form-group:not(:first-child) label{
+	margin-top: 16px;
+	font-weight: normal !important;
+
+}
+#zhuce .form-group:nth-child(4){
+	border-bottom: 1px solid #E4E4E4; 
+	padding-bottom:15px;
+}
+#zhuce .form-group:nth-child(4) label{
+	display: block; 
+	line-height: 27px;
+	margin-top:23px;
+ }
+#zhuce #tips{
+	width: 90%;
+	margin-top: 23px;
+	display:inline-block ;
+	margin-bottom:43px;
+}
+
+#zhuce #tips a{
+	color:#FAFAFA !important;
+	
+}
+#zhuce #tips span{
+	display: block;
+	float:left;
+	margin-top: 4px;
+}
+#zhuce #tips div{
+	width: 290px;
+}
+#zhuce #tips p{
+	font-size: 16px;	
+	line-height: 18px;
+}
+@media  (max-width:740px ){
+	
+	.sidebar,#close{
+		display: none;
+	}
+ 	#logo{
+ 		margin-top: 1px;
+ 	}
+
+ 	#zhuce #tips{
+ 		margin-bottom: 30px;
+ 	}
+	#zhuce #tips div{
+		width: 100%;
+	}
+}
+
+@media  (max-width:740px ) {
+	#logo{
+ 		margin-left: 0px;
+ 		margin-top: 1px;			 		
+ 	}
+
+	#logo img{
+ 		height: 52px;
+ 		
+ 	}
+ 	#logo>div{
+ 		height: 61px!important;
+ 	}
+	form{
+		margin-top:-40px!important;
+		width:99.8% !important;
+	}
+	
+	.dlbtn{
+	
+	width: 54px;
+	height: 32px;
+	border-radius: 2px;
+	}
+	#downloadBtn{
+		margin-right: 15px;
+	}
+	
+ 	#zhuce #tips{
+ 		margin-bottom: 30px;
+ 	}
+	#zhuce #tips div{
+		width: 100%;
+	}
+ 	#zhuce .dlbtn:nth-child(2){
+		display: inline-block;
+		float: right;
+		margin-right: 20px;
+		margin-top: 14px;
+		width: 180px;
+		height: 30px;
+		border-radius: 3px;
+ 	}
+}
+@media (max-width:430px) {
+	#zhuce .dlbtn,#zhuce .dlbtn:nth-child(2){
+ 		display: inline-block;
+ 		float: none; 		
+ 		width: 100%;
+ 		height: 30px;
+ 		border-radius: 3px;
+ 	}
+}

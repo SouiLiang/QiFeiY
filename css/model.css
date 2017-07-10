@@ -1,0 +1,19 @@
+.maincontain{
+	background:#F2F2F2 ;
+}
+.step{
+	margin-top:20px ;
+	
+}
+
+.step img{
+	display: block;
+	margin: 0 auto;
+	width: 712px;
+	object-fit: cover;
+}
+@media(max-width:712px) {
+	.step img{
+		width: 100%;
+	}
+}
