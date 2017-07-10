@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />	
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>	
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="jquery 3.2.1/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+		<title></title>
+		<style>
+
+		/* 本例子css */
+		.picScroll-left{ 
+			width:100%; 
+			padding-left: 15px; 
+			padding-right:15px;
+			overflow:hidden;
+			border: none!important; 
+			position: relative;  
+		}
+		.picScroll-left .hd{ overflow: hidden;  height:0px; padding:0 10px;  }
+
+		.picScroll-left .hd .prev,.picScroll-left .hd .next{position: absolute; display:block;  width:11px; height:24px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;cursor:pointer; }
+		.picScroll-left .hd .prev{			
+			left: 5px;
+			top: 50%;
+			float: left;
+			background: url(img/main/carousel/left1.png);
+		}
+		.picScroll-left .hd .prev:hover{
+			background: url(img/main/carousel/left2.png);
+		
+		}
+		.picScroll-left .hd .next{
+			right: 5px;
+			top: 50%;
+			float: right;
+			background: url(img/main/carousel/right1.png);
+		}
+		.picScroll-left .hd .next:hover{
+			background: url(img/main/carousel/right2.png);
+		
+		}
+		.picScroll-left .hd .prevStop{ background-position:-60px 0; }
+		.picScroll-left .hd .nextStop{ background-position:-60px -50px; }
+		.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; }
+		.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("images/icoCircle.gif") 0 -9px no-repeat; }
+		.picScroll-left .hd ul li.on{ background-position:0 0; }
+		.picScroll-left .bd{ margin:0 auto;width: 100%;   }
+		.picScroll-left .bd ul{ overflow:hidden; zoom:1;width: 100%; }
+		.picScroll-left .bd ul li{width: 30%; margin-right:50px; padding-left: 0px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+		.picScroll-left .bd ul li .pict{ width: 100%; margin: 0 auto; text-align:center; }
+		.picScroll-left .bd ul li .pict img{ width:100%; height: 100%; display:block;   border:1px solid #ccc; }		
+		.picScroll-left .bd ul li .title{ line-height:24px;   }
+		.picScroll-left .bd .tempWrap{
+			width: 100%!important; margin: 0 auto;
+			position:initial;
+		}
+		
+			@media (max-width:1000px ){
+				#oneSecond{
+					display: none;
+				}
+			}
+			@media (max-width:980px ) {
+				
+				
+				.navbar,.sidebar,.vd,#pop{
+					display: none;
+				}
+				
+				.pic{
+					display: block;
+				}
+				.hidespan{
+					display: inline-block!important;
+				}
+				.detialspan{
+					display: none!important;
+				}
+				
+				.videoSec{
+				width: 100%;
+				height: 60vh;
+				
+				}
+				.intro{
+					margin: 0 auto;
+					width:100%;
+				}
+			}
+			@media only screen and (max-width:740px ) {
+				.sectionTitle{
+					font-size:20px !important;				}
+				.sectionTitle~p,.sectionTitle~span{
+					font-size:12px !important;	
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<header style="height: 70px;">
+			<nav id="navhead" class="nav1" >
+				<div style=" height: 58px; width: 94%;margin:0 auto;"  class="container" >
+					<span style="margin-top: 10px">
+						<img style="width: 101px; height: 33px;"  src="img/main/914912b3135c6ab6fda61e167c5f6f16.png" />
+					</span>
+					<nav class="navbar" style="margin-left: 0px;">
+						<ul  class=" list-inline">
+							<li><a>首页</a>
+							<li><a>模板</a>
+							<li><a href="">套餐</a>
+							<li><a href="anli.html">案例</a>
+							<li class="wen">文档
+							<li>关于</li>
+							
+						</ul>
+						
+					</nav>
+					<span class="rdbtn"  >
+						<a class="fcolor taga" style="text-transform: none;" href="download.html" >登录</a>
+						<a class="fcolor taga" href="register.html">注册</a>
+					</span>
+					<div style="clear: both;"></div>
+				</div>
+				
+			</nav>
+			<nav id="navfix" class="nav2">
+				<div style=" height: 58px; width: 94%;margin:0 auto;"  class="container" >
+					<span class="" >
+						<img style="width: 101px; height: 33px;"  src="img/main/914912b3135c6ab6fda61e167c5f6f16.png" />
+					</span>
+					<nav   class="navbar col-md-8">
+						<ul  class=" list-inline">
+							<li><a>首页</a>
+							<li><a>模板</a>
+							<li><a href="">套餐</a>
+							<li><a href="anli.html">案例</a>
+							<li class="wen">文档
+							<li>关于</li>
+							
+						</ul>
+						
+					</nav>
+					<div style="clear: both;"></div>
+				</div>
+				
+			</nav>
+		 		
+		</header>
+		<section id="wendang"  style="width: 100%; height:203px;background:#333333;position: absolute;z-index: 2;border-top: 1px solid #444444; top:52px; padding-top: 30px;">
+			<div style="width:950px; height: 202.5px; margin: 0 auto;">
+				
+				<div style="width:233px ;height: 133.5px; float: left; " >
+					<span class="w1" >
+						教程中心
+					</span>
+					<span style="display: inline-block; width: 233px;height: 100.5px;margin-top: 8px;">
+						<span style="display: inline-block;width: 83.2px; height: 100%; float: left; ">
+							<div class="w2" >
+								快速入门
+							</div>
+							<div class="w2">
+								绑定域名
+							</div>
+							<div class="w2">
+								网页设计
+							</div>
+						</span>
+						<span style="display: inline-block;width:149px; height: 100%; float: left;">
+							<div class="w2" >
+								SEO相关
+							</div>
+							<div class="w2">
+								网站备案
+							</div>
+							<div class="w2" >
+								商城在线
+							</div>
+						</span>
+					</span>
+				</div>
+				<div style="width: 219px; height: 153px;  float: left;">
+					<span class="w1">
+						版本更新日志
+					</span>
+					<span style="display: inline-block; width: 233px;height: 100.5px;margin-top: 8px;">
+						<div class="w3" >
+							系统升级日志: V4.52
+						</div>
+						<div class="w3" >
+							系统升级日志: V4.50 ...
+						</div>
+						<div class="w3" >
+							系统升级日志: V4.49
+						</div>
+						<div class="w3" >
+							系统升级日志: V4.48
+						</div>
+					</span>
+				</div>
+				<div style="width:479.6px; height: 153px; float: left;">
+					<span  class="w1" >
+						建站咨询
+					</span> 
+					<span style="display: inline-block; width: 233px;height: 100.5px;margin-top: 2px;">
+						<div class="w2" >
+							2017年响应式网站设计中字体排版的新趋势
+						</div>
+						<div class="w2" >
+							如何提高网站的设计感？巧妙的...
+						</div>
+						<div class="w2" >
+							什么是响应式网页布局? 给你...
+						</div>
+						<div class="w2" >
+							干货分享: 几何设计学原理の...
+						</div>
+					</span>
+				</div>
+			</div>
+			
+		</section>
+		
+		<div style="clear: both;"></div>
+		<section class="videoSec">	
+			
+            <div class="video_class">
+            	
+            	<div class="vd">
+	                <div class="videos_res" >
+	                    <video preload="metadata" poster="img/main/yulan.jpg" autoplay muted loop >
+	                        <source src="1234.webm" type="video/webm">
+	                    </video>
+	                </div>
+	                <div id="mask" >
+						<div style="width: 38%;float: right;margin-right: 8%;">
+							<span  style="padding-top:30%;font-size: 40px;margin-bottom: 60px; font-weight: normal;">
+								
+									<b id="cursor" style="font-size: 40px;">|</b>
+								<!--<i>做一个响应式网站<br />让世界更好的了解您</i>-->
+							</span>
+							<span style="font-family:微軟正黑體; font-size:24px ;">
+								<i>真「响应式」自助建站平台<br />
+								艺术品级模板 引领自助建站潮流</i>
+							</span>
+							<span style="margin-top: 50px; ">
+								<span class="creatAcount" >
+									免费创建用户
+								</span>
+							</span>
+							
+						</div>
+						<div style="width: 100%; margin: 0 auto; padding-top: 20%;position:absolute; top:56%">
+							<div style="background:url(img/main/feedbackBtn.png); background-position: -98px -64px;margin: 0 auto;height: 25px ;width: 25px;"></div>
+						</div>
+						<div style="clear: both;"></div>
+						
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<div class="pic">            		
+	                <div class="videos_res">
+	                    
+	                    <img src="img/main/yulan.jpg"/>
+	                </div>
+            		<div id="mask2" >
+						<div style="width: 100%;height:100px;margin-right:0 auto;padding-top:50px;text-align:center;">
+							<span  style="font-size: 40px; font-weight: normal;">
+								<i>自己做网站<br/>简单又省钱</i>
+							</span>
+							<span style="display: block; margin-top: 0px;">
+								<i> 引领「响应式自助建站」潮流，每一套模板都是艺术品</i>
+							</span>
+							<span style="margin-top: 50px; ">
+								<span class="creatAcount" >
+									免费创建用户
+								</span>
+							</span>
+							
+						</div>
+					</div>
+            	</div>
+            	
+			</div>
+
+		</section>
+		
+		<div id="quick" class="container">
+			<span class="sectionTitle"  >
+				更快<span style="font-family: 黑体;">,</span>更简单
+				
+			</span>
+			<span style="">
+				
+				采用响应式技术构建<br />
+				一次编辑，在所有设备下使用
+			</span>
+			<img src="img/main/ed500daa3b9ab36f3b9cc159bad441eb-1169x725.jpg" class="img-responsive"/>
+		</div>
+		
+		<section class="tuzi" >
+			<div style="padding-top: 50px;margin: 0 auto;"class="container-fluid" >
+				<div class="reallyPic col-sm-12  col-md-6 col-xs-12" style="margin-top: 30px;">
+					<img src="img/main/1e8999c65444b6e15e26ad65cef65bef-1024x640.png"  style="width: 100%; object-fit: cover;"/>
+				</div>
+				<div id="really" class="col-sm-12 col-md-6 col-xs-12 container-fluid"  >
+					<div class="intro" style="margin: 0 auto; width:95%;">
+						<span class="sectionTitle "><p >基于H5模板，快速搭建一个响应式网站</p></span>
+					
+						<span>
+							<p>起飞页™代表着当今响应式自助建站技术的最高水平，没有之一。我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处</p>
+						</span>
+					</div>
+				</div>
+				
+				<div class="clearfix"></div>
+			</div>
+		</section>
+		<!--<section style="background: #F9F9F9;height: 550px;">
+			<div style="padding-top: 50px;" class="container">
+				<div class=" col-md-7 col-sm-12  col-xs-12" style="margin-top: 30px; margin-left: -45px; ">
+					<img src="img/main/1e8999c65444b6e15e26ad65cef65bef-1024x640.png"  style="width: 100%; height:100%; object-fit: cover;"  />
+				</div>
+				<div class="tuzi" class="col-md-5 col-sm-12 col-xs-12" >
+					<p class="sectionTitle">基于H5模板，快速搭建一个响应式网站</p>
+					<p>起飞页™代表着当今响应式自助建站技术的最高水平，没有之一。我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。</p>
+				</div>
+			</div>
+		</section>-->
+		<section style="" >
+			<div style="padding-top: 50px;margin: 0 auto;"class="container-fluid" >
+				<div class="reallyPic col-sm-12  col-md-6 col-xs-12" style="margin-top: 30px;float:right;">
+					<img src="img/main/db35a984beda90e3df6226cc34913ed9-1024x686-1.png"  style="width: 100%; object-fit: cover;"/>
+				</div>
+				<div id="really" class="col-sm-12 col-md-6 col-xs-12 container-fluid"  >
+					<div class="intro" style="margin: 0 auto; width:83%;">
+						<span class="sectionTitle"><p >真正的响应式自助建站，自适应所有设备</p></span>
+					
+						<span class="detialspan" style="letter-spacing: 0px;">
+							<p>不同于其它假响应式品牌，起飞页采用的是真正的响应式引擎。您只需对网站资料进行一次性输入，网站即可根据访问者的设备智能地呈现出最佳效果，全程无需人工干预。设备包括但不限于：计算机、Pad、微信、手机和电视</p>
+						</span>
+						<span class="hidespan" >
+							<p>不同于其它伪响应式品牌，起飞页采用真正的响应式引擎。您只需输入一次资料，网站即可根据访问者的设备智能的使用最佳效果进行呈现，全程无需人工干预。包括但不限于：计算机、Pad、微信、手机和电视。</p>
+						</span>
+					</div>
+				</div>
+				
+				
+			</div>
+		</section>
+		<section class="tuzi" >
+			<div style="padding-top: 50px;margin: 0 auto;"class="container-fluid" >
+				<div class="reallyPic col-sm-12  col-md-6 col-xs-12" style="margin-top: 30px;">
+					<img src="img/main/7e318a52b12d4972e943b68524d869f7-1024x697.png"  style="width: 100%; object-fit: cover;"/>
+				</div>
+				<div id="really" class="col-sm-12 col-md-6 col-xs-12 container-fluid"  >
+					<div class="intro" style="margin: 0 auto; width:79%;">
+						<span class="sectionTitle "><p >服务器&网络&全球部署</p></span>
+					
+						<span>
+							<p style="font-size: 14px;">起飞页自助建站平台全面采用第二代云服务器和云网络。其中，服务器硬件使用最新Xeon处理器、32个物理CPU核心、RAID10存储、ECC内存、SSD硬盘，高配服务器在提供超高性能的同时，更可减少出错几率；另外，优质、昂贵的中港加速网络确保您在大陆地区也可以迅速稳定地打开香港的网站。起飞页拥有中国大陆、中国香港以及全球5个海外云节点可供选择，将网站一键部署到距离客户最近的国家和地区。</p>
+						</span>
+					</div>
+				</div>
+				
+				<div class="clearfix"></div>
+			</div>
+		</section>
+		<!--<section style="background: #F9F9F9;height: 550px;">
+			<div style="padding-top: 50px;" class="container">
+				<div class=" col-md-8 col-sm-12  col-xs-12" style="margin-left: -95px; ">
+					<img src="img/main/7e318a52b12d4972e943b68524d869f7-1024x697.png"  style="width: 100%; height:100%; object-fit: cover;"  />
+				</div>
+				<div class="tuzi" class="col-md-4 col-sm-12 col-xs-12"  >
+					<p class="sectionTitle" style="line-height: 90px;">服务器&网络&全球部署</p>
+					<p style="font-size: 14px;">起飞页自助建站平台全面采用第二代云服务器和云网络。其中，服务器硬件使用最新Xeon处理器、32个物理CPU核心、RAID10存储、ECC内存、SSD硬盘，高配服务器在提供超高性能的同时，更可减少出错几率；另外，优质、昂贵的中港加速网络确保您在大陆地区也可以迅速稳定地打开香港的网站。起飞页拥有中国大陆、中国香港以及全球5个海外云节点可供选择，将网站一键部署到距离客户最近的国家和地区。</p>
+				</div>
+			</div>
+		</section>-->
+		<section  style="padding-bottom: 80px;">
+			<div style="padding-top: 50px;margin: 0 auto;"class="container-fluid" >
+				<div class="reallyPic col-sm-12  col-md-6 col-xs-12" style="margin-top: 30px;float:right;">
+					<img src="img/main/5d606f624a308d0e27258a0d82a42c4e-1024x641.png"  style="width: 100%; object-fit: cover;"/>
+				</div>
+				<div id="really" class="col-xs-12 col-sm-12 col-md-6  container-fluid"  >
+					<div  class="intro" style="margin: 0 auto; width:83%;">
+						<span class="sectionTitle"><p >全面的搜索引擎优化 轻松获得更高排名</p></span>
+					
+						<span  >
+							<p style="line-height: 28px;font-size: 15px;line-height:27px;" >
+							谁说自助建站的SEO效果就一定差？<br />
+							无需额外设置，平台自动为您生成网站地图（sitemap），帮助搜索引擎全面地对网站进行索引；同时，页面标题、页面描述以及静态化链接技术也可以帮助您更加轻松地获得较高的关键词排名。
+							</p>
+						</span>
+					</div>
+				</div>
+				
+				
+			</div>
+		</section>
+		<section id="oneSecond">
+			<div >
+				<div style="text-align: center; height: 154.5px;" class="container">
+					<p style="font-size: 36px;">1秒打开，快得有点儿狠</p>
+					<p style="font-size: 16px;color: rgb(73, 73, 73);line-height: 48px;">超高性能云服务器和云网络，CPU提速90%，内存提速50%，IO处理提速200%，网速提高100%</p>
+				</div>
+				<div class="smallPic">
+					<div class="b1 border-box">
+						<div class="b2">
+							<div class="b3">
+								<div class="b4">
+									<div class="b6" style="background-image:url(img/main/jet1.png) ;">
+										<img id="jet" src="img/main/jet2.png" />
+									</div>
+									
+								</div>
+								<div class="b5">CND发布</div>
+							</div>
+						</div>
+					</div >
+					<div class="b1 border-box">
+						<div class="b2">
+							<div class="b3">
+								<div class="b4">
+									<div class="b6" style="background-image:url(img/main/huancun1.png) ;">
+										<img id="huancun" src="img/main/huancun2.png" />
+									</div>
+								</div>
+								<div class="b5">多层缓存</div>
+							</div>
+						</div>
+					</div>
+					<div class="b1 border-box">
+						<div class="b2">
+							<div class="b3">
+								<div class="b4">
+									<div class="b6" style="background-image:url(img/main/yasuo1.png) ;">
+										<img src="img/main/yasuo2.png"  />
+									</div>
+									
+								</div>
+								<div class="b5">页面压缩</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="smallPic" style="margin-top: 40px;">
+					<div class="b1 border-box">
+						<div class="b2">
+							<div class="b3">
+								<div class="b4">
+									<div class="b6" style="background-image:url(img/main/hebing1.png) ;">
+										<img src="img/main/hebing2.png" />
+									</div>
+									
+								</div>
+								<div class="b5">JS/CSS文件合并</div>
+							</div>
+						</div>
+					</div >
+					<div class="b1 border-box">
+						<div class="b2">
+							<div class="b3">
+								<div class="b4">
+									<div class="b6" style="background-image:url(img/main/jiexi1.png) ;">
+										<img id="huancun" src="img/main/jiexi2.png" />
+									</div>
+								</div>
+								<div class="b5">DNS云解析</div>
+							</div>
+						</div>
+					</div>
+					<div class="b1 border-box">
+						<div class="b2">
+							<div class="b3">
+								<div class="b4">
+									<div class="b6" style="background-image:url(img/main/tu1.png) ;">
+										<img src="img/main/tu2.png"  />
+									</div>
+									
+								</div>
+								<div class="b5">图片无损压缩</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id='manyChoices'>
+			<div style="margin-top: 82px;">
+				<div style="margin: 0 auto;padding-top: 58px;">
+					<div style="font-size:36px;text-align: center; height:57px;padding-bottom: 25px;">
+						免费海量模板随您挑选
+					</div>
+					<div style="height: 45.5px;padding-top:17px;font-size: 18px;color: rgb(169, 169, 169);text-align: center; ">
+						您可以从众多出色的H5模板中挑选出您最喜欢的
+					</div>
+				</div>
+			</div>
+			<div id="lunbo" style="width: 100%; position: relative;" >
+				<div class="picScroll-left">
+					<div class="hd">
+						<a class="next"></a>
+						<ul></ul>
+						<a class="prev"></a>
+						<span class="pageState"></span>
+					</div>
+					<div class="bd">
+						<ul class="picList">
+							<li><div class="pict"><a href="" target="_blank"><img src="img/main/carousel/1.png"  /></a></div>
+</li>
+							<li>
+								<div class="pict"><a href="" target="_blank"><img src="img/main/carousel/2.png"/></a></div>
+								
+							</li>
+							<li>
+								<div class="pict"><a href="" target="_blank"><img src="img/main/carousel/3.png" /></a></div>
+								
+							</li>
+							<li>
+								<div class="pict"><a href="" target="_blank"><img src="img/main/carousel/4.png"/></a></div>
+								
+							</li>
+							<li>
+								<div class="pict"><a href="" target="_blank"><img src="img/main/carousel/5.png"/></a></div>
+								
+							</li>
+							<li>
+								<div class="pict"><a href="" target="_blank"><img src="img/main/carousel/6.png"  /></a></div>
+								
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--<div style="width: 100%;height: 300px; background: #0000FF;" >
+					<div style="width: auto; overflow: hidden;">
+						<span>
+							<img src="img/main/carousel/1.png" />
+						</span>
+						<span><img src="img/main/carousel/2.png"/></span>
+						<span >
+							<img src="img/main/carousel/3.png" />
+						</span>
+						
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				-->
+			</div>
+		</section>
+		<section id="history">
+			<div class="content" >
+				始于2007年，已经为超过15万用户提供建站服务
+			</div>
+			<div class="smallword">
+				众多不了解编程的用户使用起飞页自助建站平台做出了效果非凡的网站。也许，您也可以和他们一样出色！
+			</div>
+		</section>
+		<section id="modelPic"  style="padding: 20px 40px 30px;width:100%;height:auto;background:#F9F9F9;">
+			<ul class="mtu">
+				<li><img src="img/main/history/1.png"/></li>
+				<li><img src="img/main/history/2.png"/></li>
+				<li><img src="img/main/history/3.png"/></li>
+				<li><img src="img/main/history/4.png"/></li>
+				<li><img src="img/main/history/5.png"/></li>
+				<li><img src="img/main/history/6.png"/></li>
+			</ul>
+			<div class="clearfix"></div>
+			<div class="moreExample " style="width: 100%;padding-bottom: 106px;">
+				<a><span class="moreExamplebt"  >
+					查看更多案例<i class="glyphicon glyphicon-arrow-right"></i>
+				</span></a>
+			</div>
+		</section>
+		<section id="notOnly">
+			<div class="bigtitle" style="">
+				我们提供的不仅仅是工具
+				<span style="border-top: 2px solid #FFFFFF;width:60px;display: block;margin: 15px auto 0px;"></span>
+			</div>
+			<div class="smallword">
+				起飞页不仅是一个方便快捷的构建网站的自助建站平台，更重要的是，我们为中国用户提供了更多贴心的服务：网站备案、自动备份、快速恢复以及网站代建服务。 我们使用了国内、香港和海外最好的网络和云服务器，以确保您的网站能够快速完美地呈现在世界各地的访客面前。
+			</div>
+			<div class="notOnlypic">
+				<img src="img/main/notOnly.png"  style="width:100%; object-fit: cover;" />
+			</div>
+		</section>
+		<section id="cooperater">
+			<div class="blackBigTitle" style="	padding-top: 104px;	padding-bottom: 62px;">
+				合作伙伴
+			</div>
+			<ul class="cooperaterPic">
+				<li>
+					<div>
+						<img src="img/main/paypal.png"/>
+						<div class="name">
+							<span class="name1">贝宝合作伙伴</span>
+							<span class="name2">PayPal</span>
+						</div>
+					</div>
+					
+				</li>
+				<li><div>
+						<img src="img/main/aliyun.png">
+						<div class="name">
+						<span class="name1">阿里云金牌合作伙伴</span>
+						<span class="name2">aliyun</span>
+					</div>
+					</div>
+				</li>
+				<li><div><img src="img/main/zgdx.png">
+						<div class="name">
+						<span class="name1">中国电信指定供应商</span>
+						<span class="name2">China telecom</span>
+					</div>				
+				</li>
+				<li><div>
+						<img src="img/main/amazon.png"/>
+						<div class="name">
+						<span class="name1">亚马逊合作伙伴</span>
+						<span class="name2">amazon</span>
+					</div>
+				</li>			
+			</ul>
+		</section>
+		<section id="feedback" class="commonContain">
+			<div >
+				<section style="margin-top: 80px;padding: 37px 0px 40px;">
+					<div style="margin:20px 0px; padding-bottom: 40px;">
+						<div style="padding: 0px 5px 9px;">
+							<div class="blackBigTitle" style="height: 46px;">		
+							客户反馈						
+							</div>
+							<hr style="color: #EEEEEE; margin-top: 20px;"/>
+						</div>	
+						
+					</div>
+					<section id="feedbackCarousel">
+						
+						<div class="fdgd">
+				            <div class="box">
+				                <div class="inner">
+			                    <div class="list">
+			                    	<div style="padding：0 5px; float: left;width: 22.77%;">
+			                    		<div style="margin: 0 10px; padding: 10px 20px 30px; ">
+			                    			<img src="img/main/feedback1.png" />
+			                    		</div>
+			                    		
+			                    	</div>
+			                    	<div class="fbword" >
+		                    			<div class="word">
+		                    				我们尝试使用起飞页系统做了大概20个网站。目前为止，起飞页是我们使用过的功能较为完善的一个响应式自助建站系统，基本上可以满足我的企业客户的不同建站需求。有的时候，周末发给客服的问题，也能得到即时的回答，对我们这种帮助客户做网站的公司来说，后期服务是最重要的。
+		                    				<div class="company" >
+		                    				U-Share – 台湾知名建站公司
+		                    				</div>
+		                    			</div>
+		                    			
+			                    	</div>
+			                    	
+			                    </div>
+			                 	<div class="list">
+			                    	<div style="padding：0 5px; float: left;width: 22.77%;">
+			                    		<div style="margin: 0 10px; padding: 10px 20px 30px; ">
+			                    			<img src="img/main/feedback2.png" />
+			                    		</div>
+			                    		
+			                    	</div>
+			                    	<div class="fbword" >
+		                    			<div class="word">
+											如果和WIX, Weebly或者Squarespace进行比较，我觉得起飞页更像是一个综合体。它和Squarespace一样能做出很多华丽的效果，又像weebly一样能很快的搭建博客，又和wix一样容易上手，而且还是响应式的。总之，起飞页是一个很适合我的平台。
+		                    				<div class="company" >
+		                    				北欧维森商旅
+		                    				</div>
+		                    			</div>
+		                    			
+			                    	</div>
+			                    	
+			                    </div>
+			                    <div class="list">
+			                    	<div style="padding：0 5px; float: left;width: 22.77%;">
+			                    		<div style="margin: 0 10px; padding: 10px 20px 30px; ">
+			                    			<img src="img/main/feedback3.png" />
+			                    		</div>
+			                    		
+			                    	</div>
+			                    	<div class="fbword" >
+		                    			<div class="word">
+		                    				选用起飞页一是因为他们就在我们隔壁，二是他们的价格确实很吸引人。在试用了3个月后，我们果断的购买了5年的套餐。起飞页不仅提供了一个美观大方的网站，也提供了稳定的后期服务。我们不断的在为客户介绍起飞页。
+		                    				<div class="company" >
+		                    				苏州金蝶软件
+		                    				</div>
+		                    			</div>
+		                    			
+			                    	</div>
+			                    </div>
+				                <div class="clearfix"></div>
+				                </div>				          		
+			           		 </div>
+					        <div class="index">
+				                <span></span>
+				                <span></span>
+				                <span class="clearfix"></span>
+				            </div>
+			           		
+     			  	 	</div>
+     			  	 	<div class="pre" style="left: 4px;">
+     			  	 		<div style="background:url(img/main/feedbackBtn.png);height: 100%; width:100%;background-position: -64px -32px;">
+     			  	 			
+     			  	 		</div>
+			       		</div>
+			       		<div class="after" style="right: 4px;">
+     			  	 		<div style="background:url(img/main/feedbackBtn.png);height: 100%; width:100%;background-position: -64px -64px;">
+     			  	 			
+     			  	 		</div>
+			       		</div>
+					</section>					
+				</section>				
+			</div>
+		</section>
+		<section class="bit_iepbg">
+			<div class="divi commonContain">
+				<div>
+					<hr />
+				</div>
+			</div>
+			<div class="content commonContain clearfix">
+				<div class="service">
+					<span>客户服务热线</span>
+					<span> 4006-285-729</span>
+				</div>
+				<div class="worktime">
+					<span>工作时间：09:00~19:00（节假日定时响应） </span>
+					<span >	为每个用户提供优质的客户服务 让每个人都能自己做出赏心悦目的网站</span>
+				</div>
+				<div class="font-img">
+					<span>
+						<img src="img/main/font-img.jpg" />
+					</span>
+					
+				</div>
+				<span class="clearfix"></span>
+			</div>
+		</section>
+		<section class="commonContain">
+			<div>
+				<div class="friend-link">					
+					友情链接：<a>开源CMS</a> <a>好问</a> <a>模板之家</a> <a>织梦猫</a>
+				</div>
+			</div>
+			
+		</section>
+		<section class="foot">
+			<div style="width: 100%; margin-bottom: 20px;">
+				<div class="still" >
+					<div class="fbigw">
+					起飞页 · 优雅做网站
+					</div>
+					<div class="fsmallw" style=" width: 100%;padding-top: 22px;">
+						2014年起，专注于响应式建站领域。起飞页是目前国内最专业、最领先的响应式建站平台。
+					</div>
+					<div style="padding-top: 17px;padding-bottom: 11px;">
+						<span class="lianxi">QQ客服：800088546</span>
+						<span class="lianxi">客服热线：4006-285-729 // 0512-62969169</span>
+					</div>
+					<div class="comMatew" >
+						合作伙伴
+					</div>
+					<ul class="comMate list-inline">
+						<li><img src="img/anli/paypal.png"/>
+						<li><img src="img/anli/aliyun.png"/>
+						<li><img src="img/anli/zgdx.png"/>
+						<li><img src="img/anli/amazon.png"/></li>						
+					</ul>
+					
+				</div>
+				<div class="smallhide">
+					<div class="qita" style="width: 19.9%;padding: 0 5px;">
+						<div style="padding-left: 15px;">
+							<div class="fbigw">
+							公司信息
+							</div>
+							<div class="sw">
+								<ul>
+									<li><a>公司介绍</a></li>
+									<li><a>服务条款</a></li>
+									<li><a>法律声明</a></li>
+									<li><a>可接受服务</a></li>
+									<li><a>免责声明</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div  class="qita" style="width: 17.62%;padding: 0 5px;">
+						<div>
+							<div class="fbigw">
+								技术支持
+							</div>
+							<div class="sw">
+								<ul>
+									<li><a>联系服务</a></li>
+									<li><a>建站教程</a></li>
+									<li><a>更新日志</a></li>
+									<li><a>建站商城</a></li>
+									<li><a>博客</a></li>
+									<li><a>建站知乎</a></li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div  class="qita" style="width: 25.4%;padding: 0 5px;">
+						<div>
+							<div class="fbigw">
+								快速入口
+							</div>
+							<div class="sw">
+								<ul>
+									<li><a>购买套餐和服务</a></li>
+									<li><a>提交域名备案流程</a></li>
+									<li><a>申请域名设定服务</a></li>
+									<li><a>在线格式转换</a></li>
+									<li><a>检测网站为什么打不开</a></li>
+									<li><a>检测网站为什么打开很慢</a></li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div  class="qita" style="width:37%;padding: 0 5px;">
+						<div>
+							<div class="fbigw">
+								最新资讯
+							</div>
+							<div class="sw">
+								<ul>
+									<li><a>如何复制别人网站上的模板？</a></li>
+									<li><a>网站内页不被收录是什么原因？</a></li>
+									<li><a>一些网站域名的基本知识</a></li>
+									<li><a>请人做网站需要注意什么呢？</a></li>
+									<li><a>建站之前需要做哪些准备？</a></li>
+									
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+				<div style="text-align: center;margin-top:20px;padding: 10px 0;border-bottom: 1px solid #E2E2E2; border-top: 1px solid #E2E2E2;">
+					拓展您的业务，展示您的风采，或者只是尝试一下新的想法。 起飞页自助建站平台，拉近您与互联网的距离！
+				</div>
+			</div>
+			<div style="height: 37px;text-align: center;">
+			版权所有 2013-2017 苏州卡达网络科技有限公司   增值电信业务经营许可证苏B2-20150321 苏ICP备09008221号-3 版本: V3.6
+			</div>
+		</section>
+		<div class="sidebar">
+			<div class="side">
+				<i class="sidelogo consult"></i>
+				 <i class="word">在线客服</i>
+			</div>
+			<div class="side"> 
+				<i class="sidelogo phone"></i>
+				<i class="word">4006285769</i>
+			</div>
+			<div class="side">
+				<i class="sidelogo teach"></i>
+				<i class="word">教程中心</i>
+			</div>
+			<div class="side" id="wepop"  >
+				<i class="sidelogo wechat"></i>
+			</div>				
+		</div>
+		<span id="pop">
+				<img  src="img/download/V7B9H7EFCV_5}54E5_8J}XI.png" />
+		</span>
+		<script type="text/javascript">
+			jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:3,trigger:"click"});
+	
+			$("#wepop").hover(function(){	
+				    $("#pop").show();
+					$("#pop").animate({opacity:.9,right:'45px'},2)
+				},function(){
+				
+				$("#pop").animate({opacity:0,right:'40px'},2);
+				$("#pop").hide();
+			});
+			$(function () {
+					
+					occur();
+					var b = document.getElementsByClassName("b2");
+					for(var i=0;i<b.length;i++){
+						b[i].onmouseover=function(){
+							$(this).find('img').css("display","block");
+						}
+						b[i].onmouseout=function(){
+							$(this).find('img').css("display","none");
+						}
+					}
+					
+					$(".wen").mouseover(function(){
+						$("#wendang").css("display","block");
+						$("#wendang").animate({opacity:"1"},300);
+					})
+					$(".wen").mouseout(function () {
+						
+						$("#wendang").css("opacity","0");
+						$("#wendang").css("display","none");
+						
+					});
+					$("#wendang").mouseover(function (){
+						$(this).css("opacity","1");
+						$("#wendang").css("display","block");
+					})
+					if($(".wen").mouseout()&&$("#wendang").mouseout()){
+						$("#wendang").css("opacity","0");
+						$("#wendang").css("display","none");
+					}
+//				$("#wendang").mouseout(function () {
+//					$("#wendang").css("opacity","0");
+//					$("#wendang").css("display","none");
+//					
+//				});
+				
+//              $(".b2").mouseover(function(){
+//              	
+//              })
+				
+					$(window).scroll(function(){
+							if(window.scrollY>=70){
+								
+								$("#navfix").addClass("topshow");
+								$("#wendang").css('position','fixed');
+								$("#wendang").css('top','50px');
+							}else{
+								$("#navfix").removeClass("topshow");
+								$("#wendang").css('position','absolute');
+								
+							}
+							
+					})
+						
+					$(".b2").hover(function (object) {
+						$(this).find('img').css("opacity",'1');
+						
+					},function (object) {
+						$(this).find('img').css("opacity",'0');
+					})
+					
+					var index=0;					
+        			yuyu();
+		        	var width=$('.list').width();
+		        	$('.box').scrollLeft(0);
+		        	$(window).resize(function(){
+		        		$('.inner').width($('.box').width()*3);
+		        		$('.box').scrollLeft(index*$('.list').width())
+		        	});
+					function yuyu(){
+						
+			           $('.inner').width($('.box').width()*3);
+		//	            console.log($('.fdgd').width()*3)
+			            $('.index span').click(function(){
+			           
+		                var innerIndex=$(this).index();
+						width=$('.list').eq(innerIndex).width();
+		                // var left=$('.box').scrollLeft();
+		               	 	
+			           	$('.index span').css("background","#CECECE");
+						$(this).css("background","#5FB0FF");
+		                if(index==innerIndex){
+		                    return;
+		                }
+		                else if(innerIndex>index){
+		
+		                    var num=(innerIndex)*(width);
+		                   
+		                    var left=$('.box').scrollLeft();
+		                    // console.log(left)
+		                    time=setInterval(function(){
+		
+		                        left+=10;
+		                        
+		                        $('.box').scrollLeft(left)
+		                        if(left>num){
+		                            $('.box').scrollLeft(left-(left-num))
+		                            clearInterval(time)
+		                        }
+		
+		                    }, 5)
+		
+		                    index=innerIndex;
+		                }
+		                else if(innerIndex<index){
+		                    
+		                    var num=(innerIndex)*(width);
+		                    
+		                    var left=$('.box').scrollLeft();
+		                    
+		                 
+		                    time=setInterval(function(){
+		
+		                        left-=10;
+		                       
+		                        $('.box').scrollLeft(left);
+		                        if(left<num){
+		                        	
+		                            $('.box').scrollLeft(left+(num-left));
+		                            clearInterval(time)
+		                        }
+		
+		                    }, 5)
+		
+		                    index=innerIndex;
+		                }
+		
+		                
+		
+		                // $('.box').scrollLeft(left-220);
+		            })
+			            
+			            
+			            $(".pre").click(function () {
+			    
+			            	var l=$('.box').scrollLeft();
+			            	
+			            	var flag=l;
+			            
+			            	if(index==0){
+			            		
+			            	}
+			            	else{
+			            		index--;
+			            		$('.index span').css("background","#CECECE");
+								$('.index span').eq(index).css("background","#5FB0FF");
+			            		 time=setInterval(function(){
+		
+		                        flag-=10;
+		                       
+		                        $('.box').scrollLeft(flag);
+		                        if(flag<(l-width)){
+		                        	
+		                            $('.box').scrollLeft(l-width);
+		                            clearInterval(time)
+		                        }
+		
+		                    }, 5)
+			            	}
+			            	 
+			            	  
+			            })
+			             $(".after").click(function () {
+			    
+			            	var l=$('.box').scrollLeft();
+			            	
+			            	var flag=l;
+			            	if(index>2){
+			            		
+			            	}
+			            	else{
+			            		index++;
+			            		$('.index span').css("background","#CECECE");
+								$('.index span').eq(index).css("background","#5FB0FF");
+			            		 time=setInterval(function(){
+		
+		                        flag+=10;
+		                       if(flag>(l+width)){
+		                        	
+		                            $('.box').scrollLeft(l+width);
+		                            clearInterval(time)
+		                        }else{
+		                        	$('.box').scrollLeft(flag);
+		                        }
+		                        
+		                        
+		
+		                    }, 5)
+			            	}
+			            	 
+			            	  
+			            })
+					}
+				}) 
+				
+				function occur()
+				{
+					var t="做一个响应式网站 让世界更好的了解您";
+					var i=0
+					setInterval(function(){
+						
+						if(i<t.length){
+							if(t[i]===" "){						
+								$("#cursor").before('<br/>');
+								i++;
+							}else{
+								$("#cursor").before(t[i]);
+								i++;
+							}
+						}
+						
+					},200)
+					setInterval(function(){
+							if($("#cursor").css("opacity")=="1"){
+								$("#cursor").css("opacity","0")
+							}else{
+								$("#cursor").css("opacity","1")
+							}
+							
+						},300)
+				
+				}
+		</script>
+		
+	</body>
+</html>
