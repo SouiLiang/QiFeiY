@@ -655,7 +655,7 @@
 					 	}
 					 	
 					 })
-					 var ac=document.getElementsByClassName('accordion-body');
+					 let ac=document.getElementsByClassName('accordion-body');
 					  $(".accordion-heading").click(function (object) {
 					  		$(".accordion-heading").css("background-color","#F9F9F9");
 					 		$(this).css("background","#EDEDED");
@@ -663,7 +663,7 @@
 					 $(".ah").click(function (object) {
 					 	 
 					 	 $(".accordion-body").slideUp();
-					 	 for(var i=0;i<ac.length;i++){
+					 	 for(let i=0;i<ac.length;i++){
 					 	 	if(ac[i].id==$(this).next().attr('id')){
 					 	 		
 					 	 		 if($(ac[i]).css("display")=='none'){
