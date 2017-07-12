@@ -896,8 +896,8 @@
 			$(function () {
 					
 					occur();
-					var b = document.getElementsByClassName("b2");
-					for(var i=0;i<b.length;i++){
+					let b = document.getElementsByClassName("b2");
+					for(let i=0;i<b.length;i++){
 						b[i].onmouseover=function(){
 							$(this).find('img').css("display","block");
 						}
@@ -955,9 +955,9 @@
 						$(this).find('img').css("opacity",'0');
 					})
 					
-					var index=0;					
+					let index=0;					
         			yuyu();
-		        	var width=$('.list').width();
+		        	let width=$('.list').width();
 		        	$('.box').scrollLeft(0);
 		        	$(window).resize(function(){
 		        		$('.inner').width($('.box').width()*3);
@@ -969,7 +969,7 @@
 		//	            console.log($('.fdgd').width()*3)
 			            $('.index span').click(function(){
 			           
-		                var innerIndex=$(this).index();
+		                let innerIndex=$(this).index();
 						width=$('.list').eq(innerIndex).width();
 		                // var left=$('.box').scrollLeft();
 		               	 	
@@ -980,9 +980,9 @@
 		                }
 		                else if(innerIndex>index){
 		
-		                    var num=(innerIndex)*(width);
+		                   	let num=(innerIndex)*(width);
 		                   
-		                    var left=$('.box').scrollLeft();
+		                    let left=$('.box').scrollLeft();
 		                    // console.log(left)
 		                    time=setInterval(function(){
 		
@@ -1000,9 +1000,9 @@
 		                }
 		                else if(innerIndex<index){
 		                    
-		                    var num=(innerIndex)*(width);
+		                    let num=(innerIndex)*(width);
 		                    
-		                    var left=$('.box').scrollLeft();
+		                    let left=$('.box').scrollLeft();
 		                    
 		                 
 		                    time=setInterval(function(){
@@ -1029,9 +1029,9 @@
 			            
 			            $(".pre").click(function () {
 			    
-			            	var l=$('.box').scrollLeft();
+			            	let l=$('.box').scrollLeft();
 			            	
-			            	var flag=l;
+			            	let flag=l;
 			            
 			            	if(index==0){
 			            		
@@ -1058,9 +1058,9 @@
 			            })
 			             $(".after").click(function () {
 			    
-			            	var l=$('.box').scrollLeft();
+			            	let l=$('.box').scrollLeft();
 			            	
-			            	var flag=l;
+			            	let flag=l;
 			            	if(index>2){
 			            		
 			            	}
@@ -1091,8 +1091,8 @@
 				
 				function occur()
 				{
-					var t="做一个响应式网站 让世界更好的了解您";
-					var i=0
+					let t="做一个响应式网站 让世界更好的了解您";
+					let i=0;
 					setInterval(function(){
 						
 						if(i<t.length){
